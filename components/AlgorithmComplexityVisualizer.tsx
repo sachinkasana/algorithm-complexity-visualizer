@@ -608,7 +608,9 @@ function merge(left, right) {
       .animate-pulse { animation: pulse 1s ease-in-out infinite; }
     `;
     document.head.appendChild(style);
-    return () => document.head.removeChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const baseUrl = process.env.VERCEL_URL
   ? new URL(`https://${process.env.VERCEL_URL}`)
-  : new URL('http://localhost:3000');
+  : new URL('https://algorithm-complexity-visualizer-pi.vercel.app');
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

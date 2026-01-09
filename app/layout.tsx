@@ -1,9 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 
 const baseUrl = process.env.VERCEL_URL
   ? new URL(`https://${process.env.VERCEL_URL}`)
-  : new URL('http://localhost:3000');
+  : new URL('https://algorithm-complexity-visualizer-pi.vercel.app');
 
 export const metadata: Metadata = {
   metadataBase: baseUrl,
@@ -56,7 +58,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Analytics />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QDTBFD1XJ8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QDTBFD1XJ8');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

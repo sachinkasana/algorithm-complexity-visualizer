@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : 'http://localhost:3000';
+  : 'https://algorithm-complexity-visualizer-pi.vercel.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

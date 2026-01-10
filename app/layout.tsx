@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     description: 'Visualize sorting and searching algorithms step by step.',
   },
   manifest: '/manifest.webmanifest',
+  verification: {
+    google: '8vtWTaRmZ99VNeEg14rA299KcPo0M6ZQcNjnMAHk7B0',
+  },
   robots: {
     index: true,
     follow: true,
